@@ -24,9 +24,9 @@ func getYamlInfo(yamlContent string) (*KubernetesAPI, error) {
 	}
 
 	if m.Kind == "" {
-		return nil, fmt.Errorf("yaml file with kind missing")
+		return nil, fmt.Errorf("yaml file with kind missing: \n%v", yamlContent)
 	} else if m.Metadata.Name == "" {
-		return nil, fmt.Errorf("yaml file with name missing")
+		return nil, fmt.Errorf("yaml file with name missing: \n%v", yamlContent)
 	}
 
 	return &m, nil

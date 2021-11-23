@@ -180,6 +180,7 @@ func handleFile(file, outdir, outfileTemplate string, filters *Filters) {
 			continue
 		}
 
+		log.Info("resource: %v", m)
 		filename, err := outFile(outdir, tpl, filters, m)
 		if err != nil {
 			log.Fatalf("Failed on outFile: %v", err)
